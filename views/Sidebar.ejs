@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIDEBAR</title>
+
+    <!------- PAGE CSS ---------->
+    <link rel="stylesheet" href="essai.css">
+
+     <!------- MONTSERRAT FONT  ---------->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+
+    <!--------------- ICON - GOOGLE ------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+
+</head>
+
+<body>
+  
+     <!------------- SIDEBAR -------------->
+        <aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">inventory</span>   Santévie
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+            <ul class="sidebar-list">
+
+                <li class="sidebar-list-item">
+                   <a href="/"><span class="material-icons-outlined"> home </span> Accueil </a>
+                    
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="ListePatients"> <span class="material-icons-outlined">list_alt</span>Liste des patients</a>
+                    
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="ListeRDV"><span class="material-icons-outlined">format_list_numbered</span> Liste des rendez-vs</a>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <span class="material-icons-outlined"> add </span> Plus
+                </li>
+            </ul>
+        </aside>
+
+
+
+  
+<!-- JS -->
+<script src="JS.js"></script>
+</body>
+</html>

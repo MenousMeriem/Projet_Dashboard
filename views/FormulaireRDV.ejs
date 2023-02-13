@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Formulaire.css">
+    <!------- MONTSERRAT FONT  ---------->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    
+    <!--------------- ICON - GOOGLE ------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <title>Formulaire RDV</title>
+
+</head>
+
+<html>
+
+    <body>
+ 
+           
+    <div class="grid-container">
+
+        <!-- Header -->
+
+            <%- include('Header')%>
+
+        <!-- Header -->
+
+
+        <!-- Sidebar -->
+
+            <%- include('Sidebar')%>
+
+        <!-- Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+           
+            <div class="Formulaire">
+                <form action = "/FormulaireRDV" method = "post">
+                    <div class="main-title">
+                        <h3> Ajouter un rendez-vous en remplissant le formulaire </h3> 
+                    </div>
+                    <label> Patients </label>
+                    <select name="Patient" required>
+                        <option value="" selected hidden disabled> Choisissez un patient </option>
+                        <%patients.forEach(p => {%>
+                        <option value="<%= p.Code %>"><%=p.Nom%> <%=p.Prenom%> </option>
+                        <%})%>
+                    </select>
+                    <br>
+                    <label>Date RDV </label>
+                    <input type="date" name="DateRDV" placeholder="Date du rendez-vs ..." required> 
+
+                    <label>Heure RDV</label>
+                    <input type="time" name="HeureRDV" placeholder="Heure du rendez-vs ..." required>
+                    
+                    <br>
+                    <label>Description RDV </label>
+                    <input type="text" name="DescRDV" placeholder="Description du rendez-vs..." required>
+
+                    <input type="submit" value="Ajouter">
+
+                </form>
+            </div>
+        
+        </main>
+        <!-- Main -->
+
+
+    </div>
+
+
+<script src="JS/Index.js"></script>
+        
+
+    </body>
+
+</html>

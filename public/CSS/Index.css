@@ -1,0 +1,262 @@
+
+body {
+    margin: 0 ;
+    padding: 0 ; 
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Montserrat" , sans-serif ;
+
+}
+
+
+
+.menu-icon{
+    display: none;
+}
+
+.material-icons-Outlined {
+    vertical-align: middle;
+    line-height: 1px;
+}
+
+.text-primary {
+    color: #000000; 
+}
+.text-blue {
+    color: #13005A; 
+}
+.text-red {
+    color: #97314c; 
+}
+.text-green {
+    color: #3f963e;
+}
+.text-orange {
+    color: #bca724; 
+}
+
+.font-weight-bold{
+    font-weight: 600;
+}
+
+
+.grid-container {
+    display: grid; 
+    grid-template-columns: 260px 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 3fr ; 
+    grid-template-areas: 
+        "sidebar header header header "
+        "sidebar main main main " ;
+    height: 100vh; 
+} 
+
+
+/* --------------- HEADER -------------- */
+.header {
+    grid-area: header ;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px; 
+    box-shadow: 0 6px 7px -4px rgba (0, 0, 0, 0.2);
+    color: #000000 ;
+
+}
+
+
+
+/* --------------- SIDEBAR -------------- */
+
+#sidebar { 
+    grid-area: sidebar ;
+    height: 100%;
+    background-color: #13005A;
+    color: #ffffff; 
+    overflow-y: auto;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.sidebar-title{
+    display: flex ; 
+    justify-content: space-between ;
+    align-items: center; 
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 30px; 
+}
+
+.sidebar-title > span {
+    display: none;
+}
+
+.sidebar-brand {
+    margin-top: 15px; 
+    font-size: 20px; 
+    font-weight: 700;
+}
+
+.sidebar-list{
+    padding: 0;
+    margin-top: 15px;
+    list-style-type: none ;
+}
+
+.sidebar-list-item {
+    padding: 20px 20px 20px 20px;
+
+}
+
+
+
+.sidebar-list-item:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #000000;
+}
+
+.sidebar-responsive{
+    display: inline !important;
+    position: absolute;
+}
+
+/* --------------- MAIN -------------- */
+
+.main-container{
+    grid-area: main ;
+    overflow-y: auto;
+    padding: 20px 20px;
+    background-color: rgb(235, 235, 235);
+}
+
+.main-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-title > p {
+    font-size: 20px;
+}
+
+.main-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.card {
+    display: flex ; 
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 25px;
+    background-color: white;
+    box-sizing: border-box;
+    border: 1px solid #0A2647;
+    border-radius: 5px;
+    box-shadow: 0 6px 7px rgb(0 , 0, 0, 0.2);
+}
+
+.card:first-child {
+    border-left: 7px solid #0A2647;
+}
+
+.card:nth-child(2) {
+    border-left: 7px solid #97314c;
+}
+
+.card:nth-child(3) {
+    border-left: 7px solid #bca724;
+}
+
+.card:nth-child(4) {
+    border-left: 7px solid #3f963e;
+}
+
+.card > span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-inner {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-inner > p {
+    font-size: 18px; 
+}
+
+.card-inner > span {
+    font-size: 35px; 
+}
+
+.charts{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;  
+}
+
+.charts-card {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    -webkit-column-break-inside: avoid;
+    border: 1px solid #0A2647; 
+    border-radius: 5px; 
+    box-shadow: 0 6px 7px -4px rgb(0 , 0, 0, 0.2) ;
+}
+
+.chart-title {
+    display: flex ;
+    align-items: center ;
+    justify-content: center;
+    font-size: 22px; 
+    font-weight: 600;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas: 
+        "header"
+        "main";
+    }
+    #sidebar{
+        display: none;
+    }
+    .menu-icon {
+        display: inline;
+    }
+    .sidebar-title > span {
+        display: inline;
+    }
+
+    
+}
+
+@media screen and (max-width:768px) {
+    .main-card{
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 0;
+    }
+    .charts {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .header-left {
+        display: none;
+    }
+    
+}

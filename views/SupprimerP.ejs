@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Suppression  </title>
+</head>
+
+<body>
+    
+    <div class="grid-container">
+
+        <!-- Header -->
+
+            <%- include('Header')%>
+
+        <!-- Header -->
+
+
+        <!-- Sidebar -->
+
+            <%- include('Sidebar');%>
+
+        <!-- Sidebar -->
+
+        <!-- Main -->
+       
+        <main class="main-container">
+
+            <div class="main-card">
+                
+                <div class="card">
+                    <div class="card-inner">
+                        <span class="material-icons-outlined text-blue">inventory_2</span>
+                        <a href="/ListePatients"><p class="text-primary"> Afficher </p></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <span class="material-icons-outlined text-blue">inventory_2</span>
+                        <a href="/Formulaire"><p class="text-primary"> Ajouter </p></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <span class="material-icons-outlined text-blue">inventory_2</span>
+                        <a href="/ModifierP"><p class="text-primary"> Modifier </p></a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <span class="material-icons-outlined text-blue">inventory_2</span>
+                        <a href="/SupprimerP"><p class="text-primary"> Supprimer </p></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-title">
+                <p class="font-weight-bold"> Suppression des patients  </p>
+            </div>
+
+            <% patient.forEach(element => { %> 
+            
+                <div class="card">
+                    <div class="card-inner">
+                        <h4> Code : <%= element.Code%></h4> 
+                    </div>
+                    <div class="card-inner">
+                        <h4>Nom : <%= element.Nom%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Prenom : <%= element.Prenom%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Sexe : <%= element.Sexe%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Age : <%= element.Age%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4> Date de naissance : <%= element.DateNais.toString().slice(4,15)%></h4> 
+                    </div>
+                </div>
+           
+            <% })%> 
+        
+            
+        </main>
+
+    <!-- Main -->
+
+        
+    </div>
+
+<script src="JS/Index.js"></script>
+
+</body>
+
+
+</html> 
+
+     

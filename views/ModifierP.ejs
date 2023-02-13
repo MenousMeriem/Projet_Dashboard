@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Modification  </title>
+</head>
+
+<body>
+    
+    <div class="grid-container">
+
+        <!-- Header -->
+
+            <%- include('Header')%>
+
+        <!-- Header -->
+
+
+        <!-- Sidebar -->
+
+            <%- include('Sidebar');%>
+
+        <!-- Sidebar -->
+
+        <!-- Main -->
+       
+        <main class="main-container">
+
+            <div class="main-title">
+                <p class="font-weight-bold"> Modification des informations des patients  </p>
+            </div>
+            <form action="ModifierP" method="post">
+            <% patient.forEach(element => { %> 
+            
+                <div class="card">
+                    <div class="card-inner">
+                        <h4>Nom : <%= element.Nom%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Prenom : <%= element.Prenom%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Sexe : <%= element.Sexe%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4>Age : <%= element.Age%></h4>
+                    </div>
+                    <div class="card-inner">
+                        <h4> Date de naissance : <%= element.DateNais%></h4> 
+                    </div>
+
+                </div>
+           
+            <% })%> 
+        
+        </form>
+        </main>
+
+    <!-- Main -->
+
+        
+    </div>
+
+<script src="JS/Index.js"></script>
+
+</body>
+
+
+</html> 
+
+     
